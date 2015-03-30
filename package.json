@@ -1,0 +1,25 @@
+{
+  "author": "3100",
+  "name": "Slide",
+  "repository": "https://github.com/3100/slide.git",
+  "description": "",
+  "version": "1.0.0",
+  "main": "./app/app.js",
+  "reapp": "0.8",
+  "scripts": {
+    "test": "",
+    "start": "reapp run",
+    "build:ios": "./scripts/build-ios.sh"
+  },
+  "dependencies": {
+    "react": "^0.13.1",
+    "react-router": "^0.13.0",
+    "reapp-platform": "^1.0.0",
+    "reapp-ui": "^0.11.0",
+    "reapp-routes": "^0.10.0",
+    "reapp-request": "^0.2.0",
+    "reapp-component": "^1.0.0",
+    "delorean": "^0.9.3",
+    "md2react": "^0.5.6"
+  }
+}
