@@ -1,5 +1,7 @@
-## Reactについて
+## Reactとは
 
-Reactの簡単な紹介
+- `Facebook`が開発しているUIフレームワーク
+- `VirtualDOM`を利用し、高速な(?)描画を実現する
+- `Flux`という独自の設計パターンを提唱している
 
-<!--<img src="http://localhost:3011/profile.jpg" width="200px" height="200px" />-->
+詳しくは各自ググってください。

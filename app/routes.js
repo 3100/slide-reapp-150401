@@ -4,7 +4,8 @@
 module.exports = ({ routes, route }) =>
   routes(require,
     route('home', '/',
-      route('sub'),
-      route('sub2', 'sub2/:slideId')
+      route('sub2', '/'),
+      route('md'),
+      route('mdLoader', 'slide/:slideId')
     )
   );

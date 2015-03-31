@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, RouteHandler } from 'react-router';
 import Component from 'component';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'reapp-ui/components/buttons/BackButton';
@@ -11,17 +12,17 @@ import Theme from 'reapp-ui/helpers/Theme';
 import theme from 'theme/theme';
 import { Flux } from 'delorean';
 
-import MdLoader from './MdLoader';
+import MdLoader from './home/MdLoader';
 import MdAction from '../actions/MdAction.js';
 import MdDispatcher from '../dispatchers/MdDispatcher.js';
 
 var icon = require('../../assets/images/profile.jpg');
 const url = "https://3100.github.io/";
 
-export default Component({
-  mixins: [
-    RoutedViewListMixin
-  ],
+var Home = Component({
+  contextTypes: {
+    router: React.PropTypes.func
+  },
 
   getDefaultProps() {
     return {
@@ -30,39 +31,23 @@ export default Component({
     };
   },
 
-  getInitialState() {
-    return { step: 0};
+  statics: {
+    loadMds: function() {
+      var paths = [0,1,2,3].map((i) => {
+        return '../../assets/mds/slide' + i + '.md';
+      });
+      MdAction.initialLoadMds(paths);
+    }
   },
 
   render() {
-    var paths = [];
-    for (var i = 1; i <= this.props.slideCount; ++i) {
-      var path = '../../assets/mds/slide' + i + '.md';
-      paths.push(path);
-    }
-    const dispatcher = this.props.dispatcher;
-    const backButton =
-      <BackButton onTap={() => this.setState({step: this.state.step - 1})} />;
-
     return (
       <Theme {...theme}>
-        <NestedViewList {...this.routedViewListProps()}
-          scrollToStep={this.state.step}>
-          <View>
-            <MdLoader path={paths[0]} index="0" dispatcher={dispatcher} />
-            <Button onTap={() => this.setState({step: 1})}>次へ</Button>
-          </View>
-          <View title={[backButton, '']}>
-            <MdLoader path={paths[1]} index="1" dispatcher={dispatcher} />
-            <Button onTap={() => this.setState({step: 2})}>次へ</Button>
-          </View>
-          <View title={[backButton, '']}>
-            <MdLoader path={paths[2]} index="2" dispatcher={dispatcher} />
-            <Button onTap={() => this.setState({step: 0})}>次へ</Button>
-          </View>
-          {this.childRouteHandler()}
-        </NestedViewList>
+        <RouteHandler {...this.props} />
       </Theme>
     );
   }
 });
+
+Home.loadMds();
+export default Home;

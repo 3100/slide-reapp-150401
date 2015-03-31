@@ -2,9 +2,7 @@ import MdDispatcher from '../dispatchers/MdDispatcher.js';
 
 var MdAction = {
   initialLoadMds: function(paths) {
-    for (var path of paths) {
-      MdDispatcher.loadMd(path);
-    }
+    MdDispatcher.loadMds(paths);
   },
 
   loadMd: function(path) {
