@@ -5,6 +5,10 @@ var MdAction = {
     for (var path of paths) {
       MdDispatcher.loadMd(path);
     }
+  },
+
+  loadMd: function(path) {
+    MdDispatcher.loadMd(path);
   }
 };
 export default MdAction;
