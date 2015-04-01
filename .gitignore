@@ -1,6 +1,7 @@
 server_modules
 node_modules
 build
+ios
 .DS_Store
 *.swo
 *.swp
