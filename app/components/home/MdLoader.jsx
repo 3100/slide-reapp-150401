@@ -20,12 +20,20 @@ export default Component({
     var backButton =
       <BackButton onTap={() => window.history.back()} />;
 
+    var hasNext = this.props.slideMaxIndex > id;
     return (
       <View {...this.props} title={[backButton, '']}>
         <Md md={md} />
-        <Button onTap={() => router.transitionTo('mdLoader', {slideId: id + 1})}>
-          次へ {id + 1}
-        </Button>
+        { hasNext &&
+          <Button onTap={() => router.transitionTo('mdLoader', {slideId: id + 1})}>
+            次へ
+          </Button>
+        }
+        { !hasNext &&
+          <Button onTap={() => router.transitionTo('sub2')}>
+            最初へ
+          </Button>
+        }
       </View>
     );
   }

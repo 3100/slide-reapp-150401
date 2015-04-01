@@ -27,13 +27,13 @@ var Home = Component({
   getDefaultProps() {
     return {
       dispatcher: MdDispatcher,
-      slideCount: 3
+      slideMaxIndex: 7
     };
   },
 
   statics: {
     loadMds: function() {
-      var paths = [0,1,2,3].map((i) => {
+      var paths = [0,1,2,3,4,5,6,7].map((i) => {
         return '../../assets/mds/slide' + i + '.md';
       });
       MdAction.initialLoadMds(paths);

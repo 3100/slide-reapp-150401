@@ -6,6 +6,7 @@ module.exports = ({ routes, route }) =>
     route('home', '/',
       route('sub2', '/'),
       route('md'),
-      route('mdLoader', 'slide/:slideId')
+      route('mdLoader', 'slide/:slideId'),
+      route('404', { notFound: true })
     )
   );
