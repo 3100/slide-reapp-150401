@@ -3,7 +3,7 @@
 
 module.exports = ({ routes, route }) =>
   routes(require,
-    route('home', '/',
+      route('home', '/',  { scrollBehavior: 'scrollToTop' },
       route('sub2', '/'),
       route('md'),
       route('mdLoader', 'slide/:slideId'),
