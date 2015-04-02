@@ -11,7 +11,6 @@ var MdStore = Flux.createStore({
   },
   setAll: function(mds) {
     this.slides = mds;
-    console.log(mds);
     this.emit('change');
   },
   actions: {

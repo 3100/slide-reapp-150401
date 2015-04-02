@@ -2,6 +2,7 @@ import React from 'react';
 import Component from 'component';
 import View from 'reapp-ui/views/View';
 import Modal from 'reapp-ui/components/Modal';
+import Card from 'reapp-ui/components/Card';
 import Button from 'reapp-ui/components/Button';
 import BackButton from 'reapp-ui/components/buttons/BackButton';
 
@@ -19,8 +20,8 @@ var messages = [
     children: 'エボラウイルスが検出されました。至急この端末を窓からなげすてるんだ！'
   },
   {
-    title: '予告',
-    children: '残念だが、マグロは全て頂戴した'
+    title: '犯行予告',
+    children: '残念だが、今日のマグロは既に全ていただいた。'
   },
   {
     title: '通信',
